@@ -11,7 +11,7 @@ public class AgentDAO {
 	Connection connection;
 	PreparedStatement pst;
 	
-//	this is the function to generate the agentid Automatically
+//	this is the function to generate the agent id Automatically
 	
 	public int generateAgentNo() throws ClassNotFoundException, SQLException {
 		connection = ConnectionHelper.getConnetion();

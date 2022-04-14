@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <style>
 *{
@@ -131,7 +132,7 @@ ul li a:hover{
 
 .content .par{
     padding-left: 20px;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
     font-family: Arial;
     letter-spacing: 1.2px;
     line-height: 30px;
@@ -229,7 +230,7 @@ ul li a:hover{
     border: none;
     margin-top: 30px;
     font-size: 18px;
-    border-radius: 10px;
+    border-radius: 30px;
     cursor: pointer;
     color: #fff;
     transition: 0.4s ease;
@@ -278,40 +279,45 @@ ul li a:hover{
  <div class="main">
         <div class="navbar">
             <div class="icon">
-                <h2 class="logo">Sunil</h2>
+                <h2 class="logo">Infinite</h2>
             </div>
 
             <div class="menu">
                 <ul>
                     <li><a href="home.jsp">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="about.jsp">ABOUT</a></li>
+                    <li><a href="AgentTable.jsp">SERVICE</a></li>
                     <li><a href="#">DESIGN</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="contact.jsp">CONTACT</a></li>
                 </ul>
             </div>
 
             <div class="search">
-                <input class="srch" type="search" name="" placeholder="Type To text">
-                <a href="#"> <button class="btn">Search</button></a>
+                <a href="https://github.com/Sunil-731820"> <button class="btn">Join Me</button></a>  
             </div>
-
         </div> 
         <div class="content">
             <h1>Agent Table & <br><span>DashBoard</span> <br>Parts</h1>
                 <p class="par"> <h1>Welcome</h1> <h2>to my Agent Table DashBoard . Make sure <br>
                 that if you are new user please sign up and if after sign up make sure before accessing the dashBoard</h2>
-                <h1>Please Login In</h1>
+                <h1 class="h1">Please Login In</h1>
+                <style>
+                .h1{
+                color:black;
+                }
+                </style>
                 </p>
 
-                <button class="cn"><a href="#">JOIN US</a></button>
+                <button class="cn"><a href="https://github.com/Sunil-731820">JOIN US</a></button>
 			<form method="get" action="LoginPage.jsp">
                 <div class="form">
                     <h2>Login Here</h2>
                     <input type="email" name="userName" placeholder="Enter Email Here">
                     <input type="password" name="passCode" placeholder="Enter Password Here">
                    <input type="submit" value="Login">
+                   
 			</form>
+			<a href="passCodeUpdate.jsp">forgot passWord</a>
 			<%
 		if (request.getParameter("userName")!=null && 
 			request.getParameter("passCode") !=null
@@ -322,14 +328,15 @@ ul li a:hover{
 			int count = dao.validate(userName, passCode);
 			if (count==1) {
 %>
-		<jsp:forward page="AgentTable.jsp"/>
+		<jsp:forward page="sidebar.html"/>
 	<%
 			}
 	%>
 	<jsp:forward page="RegisterPage.jsp"/>
 	<% 
 			}
-%>
+%>					
+					
                     <p class="link">Don't have an account<br>
                     <a href="RegisterPage.jsp">Sign up </a> here</a></p>
                     <p class="liw">Log in with</p>

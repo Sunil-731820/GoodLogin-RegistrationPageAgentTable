@@ -12,6 +12,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 <%
@@ -19,7 +20,7 @@
 	int agentId = Integer.parseInt(request.getParameter("agentId"));
 	Agent agent = dao.searchAgent(agentId);
 %>
-
+<div class="w3-container w3-center w3-animate-left">
 <form mathod="get" action="UpdateAgent.jsp">
 	<center>
 		Agent Id :
@@ -38,6 +39,7 @@
 	<input type="submit" value="Update Agent ">
 	</center>
 </form>
+</div>
 <%
 	if(request.getParameter("agentId")!=null && request.getParameter("Premium")!=null){
 		Agent agentUpdate = new Agent();

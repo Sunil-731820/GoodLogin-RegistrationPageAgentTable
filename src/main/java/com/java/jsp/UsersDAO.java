@@ -31,5 +31,37 @@ public class UsersDAO {
 		pst.executeUpdate();
 		return "User Regsitered SuccessFully";
 	}
+	
+	public Users searchByEmailUser(String  userName) throws ClassNotFoundException, SQLException {
+		connection = ConnectionHelper.getConnetion();
+		String cmd  ="select *from users where userName=?";
+		pst = connection.prepareStatement(cmd);
+		pst.setString(1, userName);
+		ResultSet res = pst.executeQuery();
+		Users user = null;
+		if(res.next()) {
+			user = new Users();
+			user.setUserName(res.getString("userName"));
+			user.setPassCode(res.getString("passCode"));
+		}
+		return user;
+		
+	}
 
+	
+public String updatePassWord(Users user) throws ClassNotFoundException, SQLException {
+		connection = ConnectionHelper.getConnetion();
+		String cmd = "update users set userName=? ,passCode=? where userName =?";
+		pst = connection.prepareStatement(cmd);
+		pst.setString(1, user.getUserName());
+		pst.setString(2, user.getPassCode());
+		pst.executeUpdate();
+		return "passWord SucessFully updated";
+		
+	}
+
+	
+	
+	
+	
 }

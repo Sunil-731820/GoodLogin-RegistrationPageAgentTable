@@ -12,6 +12,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 <%
@@ -19,7 +20,7 @@
 	int agentId = dao.generateAgentNo();
 	
 %>
-
+<div class="w3-container w3-center w3-animate-bottom">
 <form method="get" action="AddAgent.jsp">
 	<center>
 		Agent Id :
@@ -40,6 +41,7 @@
 		<input type="submit" value="add Agent">
 	</center>
 </form>
+</div>
 <%
 	if(request.getParameter("agentId")!=null){
 		Agent agent = new Agent();
@@ -50,7 +52,7 @@
 		agent.setMaritalStatus(Integer.parseInt(request.getParameter("MaritalStatus")));
 		agent.setPremium(Double.parseDouble(request.getParameter("Premium")));
 		dao.addAgent(agent);
-		%>
+%>
 		
 		
 		<jsp:forward page="AgentTable.jsp"></jsp:forward>

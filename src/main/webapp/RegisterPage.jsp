@@ -19,16 +19,17 @@
 	UsersDAO dao = new UsersDAO();
 	
 %>
-<h1>Please Register Here to Go To DashBoard of Agent</h1>
+
 <form method="get" action="RegisterPage.jsp">
 	<center>
-	<h1>Please Register To access the Login</h1>
+	<h1 class="heading">Create Account?Sign Up</h1>
 	Enter userName :
-	<input type="text" name="userName"><br><br>
+	<input class="user" type="text" name="userName"><br><br>
 	Enter passcode :
-	<input type="text" name="passCode"><br><br>
-	<input type="submit" value="Register">	
+	<input class="passcode" type="text" name="passCode"><br><br>
+	<input class="reg" type="submit" value="Register">	
 	</center>
+	
 </form>
 
 <%
