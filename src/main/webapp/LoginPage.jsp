@@ -274,6 +274,7 @@ ul li a:hover{
     color: #ff7200;
 }
 </style>
+  
 </head>
 <body>
  <div class="main">
@@ -311,10 +312,10 @@ ul li a:hover{
                 <button class="cn"><a href="https://github.com/Sunil-731820">JOIN US</a></button>
 			<form method="get" action="LoginPage.jsp">
                 <div class="form">
-                    <h2>Login Here</h2>
-                    <input type="email" name="userName" placeholder="Enter Email Here">
-                    <input type="password" name="passCode" placeholder="Enter Password Here">
-                   <input type="submit" value="Login">
+                    <h2>Login</h2>
+                    <input type="email" name="userName" placeholder="Enter Email ">
+                    <input type="password" name="passCode" placeholder="Enter Password ">
+                   <input  type="submit" value="Login">
                    
 			</form>
 			<a href="passCodeUpdate.jsp">forgot passWord</a>
@@ -328,6 +329,7 @@ ul li a:hover{
 			int count = dao.validate(userName, passCode);
 			if (count==1) {
 %>
+
 		<jsp:forward page="sidebar.html"/>
 	<%
 			}
@@ -338,7 +340,7 @@ ul li a:hover{
 %>					
 					
                     <p class="link">Don't have an account<br>
-                    <a href="RegisterPage.jsp">Sign up </a> here</a></p>
+                    <a href="RegisterPage.jsp">Sign up </a></a></p>
                     <p class="liw">Log in with</p>
 
                     <div class="icons">
